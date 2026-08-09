@@ -45,18 +45,11 @@ The trained model is used to generate predictions based on the selected input fe
 ```text
 sc2-detection-deep-learning/
 │
+├── C9. GeneExpressClassifier.zip
 ├── app.py
-├── data.csv
-├── Test data.csv
-├── proposed_DBN_SNN_ORLC.pkl
-├── adaboost.pkl
-├── decision_tree.pkl
-├── gradient_boosting.pkl
-├── k-nearest_neighbors.pkl
-├── logistic_regression.pkl
-├── encoders.pkl
+├── orlc.py
+├── run3120.bat
 └── README.md
-```
 
 ## 🚀 How to Run
 
