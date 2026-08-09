@@ -18,6 +18,17 @@ The application supports:
 * Visualization of analysis and model results
 * SQLite-based application data management
 
+## ✨ Features
+
+- Upload CSV datasets through the web application
+- Perform exploratory data analysis (EDA)
+- Preprocess uploaded data
+- Compare multiple machine learning classifiers
+- Use deep learning models for SC2 detection
+- Generate predictions from uploaded datasets
+- Evaluate model performance
+- Visualize data and model results
+- Store and process uploaded files through the Flask application
 ## 🛠️ Technologies Used
 
 ### Programming & Framework
