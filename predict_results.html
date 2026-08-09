@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Results - COVID-19{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <i class="fas fa-check-circle medical-icon" style="color: #28a745;"></i>
+    <h1 style="color: #FF1493; font-weight: bold;">Prediction Results</h1>
+    <p class="lead">COVID-19 Classification Predictions from All Models</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-download"></i> Download Results
+    </div>
+    <div class="card-body text-center">
+        <p>Your predictions have been generated successfully!</p>
+        <a href="{{ url_for('download_file', filename=filename) }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-file-download"></i> Download Predictions CSV
+        </a>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table"></i> Sample Predictions (First 20 Rows)
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            {{ test_data|safe }}
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-brain"></i> Prediction Summary by Classifier
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for classifier in classifiers %}
+                {% if classifier in predictions %}
+                <div class="col-md-6 mb-3">
+                    <div class="stats-box">
+                        <h5><i class="fas fa-microscope" style="color: #FF1493;"></i> {{ classifier }}</h5>
+                        <p><strong>Total Predictions:</strong> {{ predictions[classifier]|length }}</p>
+                        {% set pred_counts = {} %}
+                        {% for pred in predictions[classifier] %}
+                            {% if pred in pred_counts %}
+                                {% set _ = pred_counts.update({pred: pred_counts[pred] + 1}) %}
+                            {% else %}
+                                {% set _ = pred_counts.update({pred: 1}) %}
+                            {% endif %}
+                        {% endfor %}
+                        <table class="table table-sm table-bordered mt-2">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for class, count in pred_counts.items() %}
+                                <tr>
+                                    <td>{{ class }}</td>
+                                    <td><strong>{{ count }}</strong></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{{ url_for('predict') }}" class="btn btn-secondary btn-lg">
+        <i class="fas fa-redo"></i> Predict Another File
+    </a>
+    <a href="{{ url_for('performance') }}" class="btn btn-primary btn-lg">
+        <i class="fas fa-chart-bar"></i> View Model Performance
+    </a>
+</div>
+
+<div class="text-center mt-4">
+    <i class="fas fa-heartbeat" style="color: #FF1493; font-size: 2rem;"></i>
+    <p style="color: #000000; font-style: italic;">Reliable predictions powered by AI</p>
+</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Home - COVID-19 Classification{% endblock %}
+
+{% block content %}
+<div class="text-center my-5">
+    <i class="fas fa-virus medical-icon"></i>
+    <i class="fas fa-microscope medical-icon"></i>
+    <i class="fas fa-dna medical-icon"></i>
+    <h1 class="display-4" style="color: #FF1493; font-weight: bold;">COVID-19 Classification Using Gene Expression Data</h1>
+    <p class="lead" style="color: #000000; font-size: 1.2rem;">Advanced Machine Learning & Deep Learning for Viral Status Detection</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-info-circle"></i> About the Project
+            </div>
+            <div class="card-body">
+                <p>This web application uses advanced machine learning and deep learning techniques to classify COVID-19 viral status based on gene expression data.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #FF1493;"></i> Multiple ML Classifiers (7 algorithms)</li>
+                    <li><i class="fas fa-check-circle" style="color: #FF1493;"></i> Proposed Hybrid Deep Learning Model</li>
+                    <li><i class="fas fa-check-circle" style="color: #FF1493;"></i> Comprehensive Performance Analysis</li>
+                    <li><i class="fas fa-check-circle" style="color: #FF1493;"></i> Batch Prediction Capability</li>
+                    <li><i class="fas fa-check-circle" style="color: #FF1493;"></i> Interactive Data Visualization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-brain"></i> Classification Models
+            </div>
+            <div class="card-body">
+                <p><strong>Machine Learning Classifiers:</strong></p>
+                <ol>
+                    <li><i class="fas fa-tree" style="color: #FF1493;"></i> Random Forest</li>
+                    <li><i class="fas fa-vector-square" style="color: #FF1493;"></i> Support Vector Machine</li>
+                    <li><i class="fas fa-users" style="color: #FF1493;"></i> K-Nearest Neighbors</li>
+                    <li><i class="fas fa-chart-line" style="color: #FF1493;"></i> Logistic Regression</li>
+                    <li><i class="fas fa-project-diagram" style="color: #FF1493;"></i> Decision Tree</li>
+                    <li><i class="fas fa-rocket" style="color: #FF1493;"></i> Gradient Boosting</li>
+                    <li><i class="fas fa-sync" style="color: #FF1493;"></i> AdaBoost</li>
+                </ol>
+                <p><strong>Deep Learning:</strong></p>
+                <ul>
+                    <li><i class="fas fa-robot" style="color: #FF1493;"></i> Proposed Hybrid DL Classifier (Neural Network with Batch Normalization & Dropout)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="stats-box">
+            <i class="fas fa-chart-bar" style="color: #FF1493; font-size: 3rem;"></i>
+            <h3>Exploratory Data Analysis</h3>
+            <p>Visualize and understand your data with comprehensive statistical analysis</p>
+            <a href="{{ url_for('eda') }}" class="btn btn-primary">View EDA <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stats-box">
+            <i class="fas fa-microscope" style="color: #FF1493; font-size: 3rem;"></i>
+            <h3>Classifier Analysis</h3>
+            <p>Train and evaluate multiple classification models on gene expression data</p>
+            <a href="{{ url_for('classification') }}" class="btn btn-primary">Analyze <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="stats-box">
+            <i class="fas fa-file-medical" style="color: #FF1493; font-size: 3rem;"></i>
+            <h3>Batch Prediction</h3>
+            <p>Upload your test data and get instant predictions from all models</p>
+            <a href="{{ url_for('predict') }}" class="btn btn-primary">Predict <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-clipboard-list"></i> How to Use
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-upload" style="color: #FF1493; font-size: 2rem;"></i>
+                        <h5>1. Upload Data</h5>
+                        <p>Prepare your gene expression CSV file</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-cogs" style="color: #FF1493; font-size: 2rem;"></i>
+                        <h5>2. Train Models</h5>
+                        <p>Models are trained automatically on first use</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-chart-pie" style="color: #FF1493; font-size: 2rem;"></i>
+                        <h5>3. Analyze Results</h5>
+                        <p>Compare performance across all classifiers</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <i class="fas fa-download" style="color: #FF1493; font-size: 2rem;"></i>
+                        <h5>4. Download</h5>
+                        <p>Get predictions for your test data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <i class="fas fa-heartbeat" style="color: #FF1493; font-size: 2rem;"></i>
+    <p style="color: #000000; font-style: italic;">"Empowering healthcare through artificial intelligence"</p>
+</div>
+{% endblock %}
