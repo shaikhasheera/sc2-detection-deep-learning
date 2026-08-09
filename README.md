@@ -20,14 +20,16 @@ The application supports:
 
 ## 🛠️ Tech Stack
 
-**Backend:** Python, Flask
-**Machine Learning:** Scikit-learn
-**Deep Learning:** TensorFlow, Keras
-**Data Processing:** Pandas, NumPy
-**Visualization:** Matplotlib, Seaborn
-**Database:** SQLite
-**Frontend:** HTML, CSS
-**Model Serialization:** Pickle, Joblib
+| Category            | Technologies        |
+| ------------------- | ------------------- |
+| Backend             | Python, Flask       |
+| Machine Learning    | Scikit-learn        |
+| Deep Learning       | TensorFlow, Keras   |
+| Data Processing     | Pandas, NumPy       |
+| Visualization       | Matplotlib, Seaborn |
+| Database            | SQLite              |
+| Frontend            | HTML, CSS           |
+| Model Serialization | Pickle, Joblib      |
 
 ## 🎯 Project Objective
 
@@ -55,18 +57,17 @@ The system combines data preprocessing, exploratory data analysis, traditional m
 * Includes model performance evaluation using multiple metrics
 * Uses trained model files for prediction through the web application
 
-
 ## ✨ Features
 
-- Upload CSV datasets through the web application
-- Perform exploratory data analysis (EDA)
-- Preprocess uploaded data
-- Compare multiple machine learning classifiers
-- Use deep learning models for SC2 detection
-- Generate predictions from uploaded datasets
-- Evaluate model performance
-- Visualize data and model results
-- Store and process uploaded files through the Flask application
+* Upload CSV datasets through the web application
+* Perform exploratory data analysis (EDA)
+* Preprocess uploaded data
+* Compare multiple machine learning classifiers
+* Use deep learning models for SC2 detection
+* Generate predictions from uploaded datasets
+* Evaluate model performance
+* Visualize data and model results
+* Store and process uploaded files through the Flask application
 
 ## 🔄 Project Workflow
 
@@ -124,46 +125,57 @@ The project also includes deep learning approaches using TensorFlow and Keras, i
 
 The trained models are stored in the `model/` directory and are used by the application for prediction and model comparison.
 
-## 🛠️ Technologies Used
+## 🔬 Data Processing
 
-### Programming & Framework
+The application uses Pandas and NumPy for data processing and Scikit-learn utilities for preprocessing, including:
 
-* Python
-* Flask
+* Label Encoding
+* Feature Scaling
+* Train/Test Splitting
 
-### Data Processing & Visualization
+## 📊 Model Evaluation
 
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
+The application evaluates classification models using multiple performance metrics:
 
-### Machine Learning
+| Metric                | Purpose                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| Accuracy              | Measures the overall proportion of correct predictions           |
+| Precision             | Measures the proportion of positive predictions that are correct |
+| Recall                | Measures how effectively positive cases are identified           |
+| F1 Score              | Combines precision and recall into a single metric               |
+| Confusion Matrix      | Shows the distribution of correct and incorrect predictions      |
+| Classification Report | Provides detailed classification performance metrics             |
 
-* Scikit-learn
-* Random Forest
-* Support Vector Machine
-* K-Nearest Neighbors
-* Logistic Regression
-* Decision Tree
-* Gradient Boosting
-* AdaBoost
+These metrics are used to analyze and compare the performance of the implemented models.
 
-### Deep Learning
+## 🌐 Application Modules
 
-* TensorFlow
-* Keras
-* Dense Neural Networks
-* Batch Normalization
-* Dropout
+The Flask web application is organized into multiple modules:
 
-### Database & Utilities
+| Module             | Purpose                                              |
+| ------------------ | ---------------------------------------------------- |
+| Home               | Provides the main interface for the application      |
+| EDA                | Performs exploratory data analysis and visualization |
+| Classification     | Runs and compares classification models              |
+| Performance        | Displays model evaluation results                    |
+| Prediction         | Allows users to submit data for prediction           |
+| Prediction Results | Displays the generated prediction results            |
 
-* SQLite
-* Pickle
-* Joblib
+The application uses Flask templates with HTML and CSS to provide the web interface.
 
-## 📂 Project Structure
+## 📂 Dataset
+
+The project includes dataset files used for model development and testing:
+
+```text
+Dataset/
+├── Data.csv
+└── testdata.csv
+```
+
+The application also supports CSV file uploads through the web interface for processing and prediction.
+
+## 📁 Project Structure
 
 ```text
 sc2-detection-deep-learning/
@@ -207,101 +219,14 @@ sc2-detection-deep-learning/
 └── README.md
 ```
 
-## ⚙️ Machine Learning Models
-
-The application includes several classification models:
-
-* Random Forest
-* Support Vector Machine
-* K-Nearest Neighbors
-* Logistic Regression
-* Decision Tree
-* Gradient Boosting
-* AdaBoost
-
-The project also includes deep learning models and trained model files for prediction and comparison.
-
-## 🔬 Data Processing
-
-The application uses Pandas and NumPy for data processing and Scikit-learn utilities for preprocessing, including:
-
-* Label Encoding
-* Feature Scaling
-* Train/Test Splitting
-
-## 📊 Model Evaluation
-
-The application uses evaluation metrics including:
-
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* Confusion Matrix
-* Classification Report
-
-## 🌐 Web Application
-
-The Flask application provides web pages for:
-
-* Data analysis
-* Classification
-* Model performance
-* Prediction
-* Prediction results
-
-Uploaded CSV files are processed through the application and prediction results can be generated dynamically.
-
-## 📊 Model Evaluation
-
-The application evaluates the classification models using multiple performance metrics:
-
-| Metric                | Purpose                                                          |
-| --------------------- | ---------------------------------------------------------------- |
-| Accuracy              | Measures the overall proportion of correct predictions           |
-| Precision             | Measures the proportion of positive predictions that are correct |
-| Recall                | Measures how effectively positive cases are identified           |
-| F1 Score              | Combines precision and recall into a single metric               |
-| Confusion Matrix      | Shows the distribution of correct and incorrect predictions      |
-| Classification Report | Provides detailed classification performance metrics             |
-
-These metrics are used to analyze and compare the performance of the implemented models.
-
-## 🌐 Application Modules
-
-The Flask web application is organized into multiple modules:
-
-| Module             | Purpose                                              |
-| ------------------ | ---------------------------------------------------- |
-| Home               | Provides the main interface for the application      |
-| EDA                | Performs exploratory data analysis and visualization |
-| Classification     | Runs and compares classification models              |
-| Performance        | Displays model evaluation results                    |
-| Prediction         | Allows users to submit data for prediction           |
-| Prediction Results | Displays the generated prediction results            |
-
-The application uses Flask templates with HTML and CSS to provide the web interface.
-
-## 📂 Dataset
-
-The project includes dataset files used for model development and testing:
-
-```text
-Dataset/
-├── Data.csv
-└── testdata.csv
-```
-
-The application also supports CSV file uploads through the web interface for processing and prediction.
-
-## 📁 Directory Overview
+## 📋 Directory Overview
 
 | Directory/File | Description                                                     |
 | -------------- | --------------------------------------------------------------- |
 | `Dataset/`     | Contains the project datasets used for processing and testing   |
 | `model/`       | Contains trained machine learning and deep learning model files |
 | `static/`      | Contains CSS and other static web assets                        |
-| `templates/`   | Contains the HTML templates used by the Flask application       |
+| `templates/`   | Contains HTML templates used by the Flask application           |
 | `uploads/`     | Stores files uploaded or generated by the application           |
 | `app.py`       | Main Flask application and web application logic                |
 | `orlc.py`      | Contains the ORLC implementation used by the project            |
@@ -325,14 +250,14 @@ cd sc2-detection-deep-learning
 
 ### 2. Create and activate a virtual environment
 
-Windows:
+**Windows:**
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux/macOS:
+**Linux/macOS:**
 
 ```bash
 python3 -m venv venv
