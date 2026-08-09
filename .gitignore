@@ -19,5 +19,3 @@ Thumbs.db
 # Generated uploads
 uploads/*
 !uploads/.gitkeep
-uploads/*
-!uploads/.gitkeep
