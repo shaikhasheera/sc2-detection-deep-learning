@@ -1,77 +1,171 @@
 # SC2 Detection Using Deep Learning
 
-A deep learning-based approach for SC2 detection using multi-omic and demographic data.
+A Flask-based machine learning and deep learning application for SC2 detection using multi-omic and demographic data. The application provides data analysis, classification, model performance evaluation, and prediction functionality through a web interface.
 
 ## 📌 Project Overview
 
-This project focuses on detecting SC2 using a neural-network-based approach applied to multi-omic and demographic data.
+This project implements a web-based machine learning system for SC2 detection.
 
-The project explores data preprocessing, model development, training, and prediction to identify SC2-related patterns from the available dataset.
+The application supports:
 
-## 🎯 Objective
-
-* Process and prepare the dataset for machine learning.
-* Use relevant multi-omic and demographic features.
-* Develop a deep learning-based detection model.
-* Train and evaluate the model using the prepared dataset.
-* Generate predictions for unseen test data.
+* Dataset upload through a web interface
+* Exploratory data analysis (EDA)
+* Data preprocessing
+* Multiple machine learning classification models
+* Deep learning-based models
+* Model performance evaluation
+* Prediction on uploaded CSV data
+* Visualization of analysis and model results
+* SQLite-based application data management
 
 ## 🛠️ Technologies Used
 
+### Programming & Framework
+
 * Python
+* Flask
+
+### Data Processing & Visualization
+
 * Pandas
 * NumPy
+* Matplotlib
+* Seaborn
+
+### Machine Learning
+
 * Scikit-learn
-* Deep Learning / Neural Networks
-* Jupyter Notebook
+* Random Forest
+* Support Vector Machine
+* K-Nearest Neighbors
+* Logistic Regression
+* Decision Tree
+* Gradient Boosting
+* AdaBoost
 
-## 📊 Dataset
+### Deep Learning
 
-The dataset was processed and cleaned before model training.
+* TensorFlow
+* Keras
+* Dense Neural Networks
+* Batch Normalization
+* Dropout
 
-* Original records: **702**
-* Cleaned records: **234**
-* Training records: **187**
-* Testing records: **47**
+### Database & Utilities
 
-## 🧠 Model
+* SQLite
+* Pickle
+* Joblib
 
-The project uses a **Dense Batch Normalization-Serial Neural Network (DBN-SNN)** approach for SC2 detection.
-
-The trained model is used to generate predictions based on the selected input features.
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
 sc2-detection-deep-learning/
 │
-├── C9. GeneExpressClassifier.zip
+├── Dataset/
+│   ├── Data.csv
+│   └── testdata.csv
+│
+├── model/
+│   ├── adaboost.pkl
+│   ├── decision tree.pkl
+│   ├── encoders.pkl
+│   ├── gradient boosting.pkl
+│   ├── k-nearest neighbors.pkl
+│   ├── logistic regression.pkl
+│   ├── proposed_DBN_SNN_ORLC.pkl
+│   ├── proposed_hybrid_dl.pkl
+│   ├── random forest.pkl
+│   ├── results.json
+│   └── support vector machine.pkl
+│
+├── static/
+│   └── css/
+│       └── style.css
+│
+├── templates/
+│   ├── base.html
+│   ├── classification.html
+│   ├── eda.html
+│   ├── performance.html
+│   ├── predict.html
+│   └── predict_results.html
+│
+├── uploads/
+│   └── .gitkeep
+│
 ├── app.py
 ├── orlc.py
 ├── run3120.bat
+├── .gitignore
 └── README.md
+```
 
-## 🚀 How to Run
+## ⚙️ Machine Learning Models
 
-1. Clone the repository.
-2. Install the required Python libraries.
-3. Make sure the required dataset and model files are available.
-4. Run the application using:
+The application includes several classification models:
+
+* Random Forest
+* Support Vector Machine
+* K-Nearest Neighbors
+* Logistic Regression
+* Decision Tree
+* Gradient Boosting
+* AdaBoost
+
+The project also includes deep learning models and trained model files for prediction and comparison.
+
+## 🔬 Data Processing
+
+The application uses Pandas and NumPy for data processing and Scikit-learn utilities for preprocessing, including:
+
+* Label Encoding
+* Feature Scaling
+* Train/Test Splitting
+
+## 📊 Model Evaluation
+
+The application uses evaluation metrics including:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
+* Classification Report
+
+## 🌐 Web Application
+
+The Flask application provides web pages for:
+
+* Data analysis
+* Classification
+* Model performance
+* Prediction
+* Prediction results
+
+Uploaded CSV files are processed through the application and prediction results can be generated dynamically.
+
+## 🚀 Running the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/shaikhasheera/sc2-detection-deep-learning.git
+cd sc2-detection-deep-learning
+```
+
+### 2. Install the required dependencies
+
+Install the Python packages used by the project, including Flask, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Joblib, and TensorFlow.
+
+### 3. Run the Flask application
 
 ```bash
 python app.py
 ```
 
-## 📈 Models Compared
-
-The project includes trained models for comparison, including:
-
-* Proposed DBN-SNN model
-* AdaBoost
-* Decision Tree
-* Gradient Boosting
-* K-Nearest Neighbors
-* Logistic Regression
+The application can then be accessed through the local Flask server.
 
 ## 👩‍💻 Author
 
